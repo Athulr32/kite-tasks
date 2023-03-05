@@ -1,0 +1,38 @@
+
+datasource db{
+    provider ="postgres"
+    url = "postgres://qrfiylyo:sI8op9UDqdyXyHxuKr_0usTYhdE6c2Ol@mouse.db.elephantsql.com/qrfiylyo" 
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+
+model Package{
+
+    id String @id @unique
+    name String
+    contact String 
+    description String 
+    location String
+    cost Int
+    image String 
+    activities String []
+    details_file String 
+    updatedAt   String 
+    video_link  String 
+    is_premium_flag Boolean
+
+
+}
+
+
+model User{
+    email String @id @unique
+    password String
+}
+
+
+
+
