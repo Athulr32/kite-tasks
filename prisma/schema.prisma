@@ -1,7 +1,7 @@
 
 datasource db{
     provider ="postgres"
-    url = process.env.POSTGRES_URL
+    url = postgres://qrfiylyo:sI8op9UDqdyXyHxuKr_0usTYhdE6c2Ol@mouse.db.elephantsql.com/qrfiylyo
 }
 
 generator client {
