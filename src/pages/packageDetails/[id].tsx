@@ -22,7 +22,7 @@ export default function DetailsOfPackage(props: propData) {
 
             setPackageDetails(details)
         }
-        catch(e){
+        catch (e) {
             getDetails()
         }
 
@@ -37,6 +37,7 @@ export default function DetailsOfPackage(props: propData) {
 
     return (
         <>
+            {!packageDetails && <div className='text-white text-center text-4xl mt-40'>Loading...</div>}
             {packageDetails && <PackageDetails {...packageDetails}></PackageDetails>}
 
         </>

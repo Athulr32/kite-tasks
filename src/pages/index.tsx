@@ -71,7 +71,7 @@ export default function Home() {
   return (
     <>
 
-      {!packageState && <div>Loading</div>}
+      {!packageState && <div className='text-white text-center text-4xl mt-40'>Loading...</div>}
 
       {packageState &&
         <div style={{ height: "100%" }}>
