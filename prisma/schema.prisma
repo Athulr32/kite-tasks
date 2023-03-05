@@ -1,7 +1,7 @@
 
 datasource db{
     provider ="postgres"
-    url = process.env.POSTGRES_URL
+    url = env("POSTGRES_URL")
 }
 
 generator client {
