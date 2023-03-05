@@ -20,27 +20,32 @@ export default async function handler(
 
     const email = req.body.email;   
     const password = req.body.password;
-    const find = await prisma.user.findUnique({
-       where:{
-        email
-       }
-    })
-
-    if(find === null){
-
-        const insert = await prisma.user.create({
-           data:{
-            email,password
-           }
+  
+    try{
+        const find = await prisma.user.findUnique({
+            where:{
+             email
+            }
          })
-
-         res.status(400).json({msg:"Registered",flag:true})
+     
+         if(find === null){
+     
+             const insert = await prisma.user.create({
+                data:{
+                 email,password
+                }
+              })
+     
+              res.status(400).json({msg:"Registered",flag:true})
+         }
+         else{
+     
+     
+             res.status(400).json({msg:"User Already Available",flag:true})
+         }
+     
     }
-    else{
-
-
-        res.status(400).json({msg:"User Already Available",flag:true})
+    catch(e){
+        res.status(400).json({msg:"Invalid",flag:false})
     }
-
-
 }

@@ -17,7 +17,7 @@ export default function Package(props: PackageDetails) {
                         src={`/${props.image}`}
                         alt='Green double couch with wooden legs'
                         width={400} height={200}
-                        style={{maxHeight:"200px",minHeight:"200px"}}
+                        style={{ maxHeight: "200px", minHeight: "200px" }}
                     />
                     <Stack mt='6' spacing='3'>
                         <Heading size='md'>{props.name}</Heading>
@@ -25,14 +25,14 @@ export default function Package(props: PackageDetails) {
                             {props.description}
                         </Text>
                         <Text color='white.800' fontSize='2xl' textAlign={"center"}>
-                           Price: {props.cost}
+                            Price: {props.cost}
                         </Text>
                     </Stack>
                 </CardBody>
                 <Divider />
                 <Center>
                     <CardFooter>
-                        <Button  bg="red"><Link href={`packageDetails/${props.id}`}>View More</Link></Button>
+                        <Link href={`packageDetails/${props.id}`}><Button bg="red">View More</Button></Link>
                     </CardFooter>
                 </Center>
             </Card></>

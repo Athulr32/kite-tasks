@@ -16,10 +16,15 @@ export default function DetailsOfPackage(props: propData) {
 
     async function getDetails() {
 
-        const res = await fetch(`/api/package/${props.id}`)
-        const details = await res.json() as Data;
+        try {
+            const res = await fetch(`/api/package/${props.id}`)
+            const details = await res.json() as Data;
 
-        setPackageDetails(details)
+            setPackageDetails(details)
+        }
+        catch(e){
+            getDetails()
+        }
 
     }
 
@@ -34,7 +39,7 @@ export default function DetailsOfPackage(props: propData) {
         <>
             {packageDetails && <PackageDetails {...packageDetails}></PackageDetails>}
 
-            </>
+        </>
     )
 
 
