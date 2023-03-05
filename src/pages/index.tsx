@@ -30,7 +30,7 @@ export default function Home() {
   
       if(sort === "ht"){
   
-        fliteredPackages.sort((a,b) => a.cost - b.cost); 
+        fliteredPackages.sort((a,b) => b.cost - a.cost); 
       }
       else if (sort === "lh"){
         fliteredPackages.sort((a,b) => a.cost - b.cost); 
